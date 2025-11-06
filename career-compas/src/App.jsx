@@ -1,19 +1,23 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 
-// ✅ Import your local images (case-sensitive and exact)
 import aiRoleFinder from "./assets/ai-role-finder.png";
 import dynamicRoadmap from "./assets/dynamic-roadmap.png";
 import mockInterview from "./assets/mock-interview.png";
 import skillGapAnalyzer from "./assets/skill-gap-analyzer.png";
 import linkedinBoost from "./assets/linkedin-github-boost.png";
 
+// 👤 User images (replace with your own local images if available)
+import boy1 from "./assets/boy1.png";
+import boy2 from "./assets/boy2.png";
+import girl1 from "./assets/girl1.png";
+import girl2 from "./assets/girl2.png";
+
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
 
-  // Flashcard slides
   const slides = [
     {
       image: aiRoleFinder,
@@ -42,7 +46,6 @@ function App() {
     },
   ];
 
-  // Auto switch slides every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -50,7 +53,6 @@ function App() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Initialize Vanta.js animated background
   useEffect(() => {
     if (!vantaEffect.current && window.VANTA) {
       vantaEffect.current = window.VANTA.WAVES({
@@ -75,34 +77,92 @@ function App() {
   }, []);
 
   return (
-    <div ref={vantaRef} className="vanta-bg">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">Career Compass </div>
-        <button
-          className="login-btn"
-          onClick={() => alert("Redirect to Login/Signup Page")}
-        >
-          Login / Sign Up
-        </button>
-      </nav>
+    <div className="main-container">
+      {/* Hero Section */}
+      <div ref={vantaRef} className="vanta-bg">
+        <nav className="navbar">
+          <div className="logo">Career Compass</div>
+          <button
+            className="login-btn"
+            onClick={() => alert("Redirect to Login/Signup Page")}
+          >
+            Login / Sign Up
+          </button>
+        </nav>
 
-      {/* Flashcard Section */}
-      <div className="content-container">
-        <div key={currentIndex} className="slide fade-in">
-          <div className="slide-text">
-            <h1>{slides[currentIndex].title}</h1>
-            <p>{slides[currentIndex].text}</p>
-            <button className="see-more-btn">Get Started →</button>
-          </div>
-          <div className="slide-image">
-            <img
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].title}
-            />
+        <div className="content-container">
+          <div key={currentIndex} className="slide fade-in">
+            <div className="slide-text">
+              <h1>{slides[currentIndex].title}</h1>
+              <p>{slides[currentIndex].text}</p>
+              <button
+                className="see-more-btn"
+                onClick={() =>
+                  document
+                    .getElementById("testimonials")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get Started →
+              </button>
+            </div>
+            <div className="slide-image">
+              <img
+                src={slides[currentIndex].image}
+                alt={slides[currentIndex].title}
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="testimonials-section">
+        <h2>What Our Users Say</h2>
+        <div className="testimonial-grid">
+          <div className="testimonial-card">
+            <img src={girl1} alt="Priya" />
+            <p>
+              “Career Compass helped me find clarity in my learning path and
+              land my first internship in Data Science!”
+            </p>
+            <h4>Priya S</h4>
+            <span>B.Tech AI & DS</span>
+          </div>
+          <div className="testimonial-card">
+            <img src={boy1} alt="Aditya" />
+            <p>
+              “The AI-based guidance and mock interviews made my preparation
+              smoother. Highly recommend to freshers!”
+            </p>
+            <h4>Aditya R</h4>
+            <span>Frontend Developer</span>
+          </div>
+          <div className="testimonial-card">
+            <img src={girl2} alt="Sneha" />
+            <p>
+              “A platform that truly understands tech students! The dynamic
+              roadmap was exactly what I needed.”
+            </p>
+            <h4>Sneha M</h4>
+            <span>Software Engineer</span>
+          </div>
+          <div className="testimonial-card">
+            <img src={boy2} alt="Rahul" />
+            <p>
+              “I was able to map my skills with job requirements and get real
+              feedback from mentors. Great experience!”
+            </p>
+            <h4>Rahul K</h4>
+            <span>Data Analyst</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2025 Career Compass. All Rights Reserved.</p>
+      </footer>
     </div>
   );
 }
