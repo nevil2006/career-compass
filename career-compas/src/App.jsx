@@ -130,13 +130,14 @@ function App() {
             <span>B.Tech AI & DS</span>
           </div>
           <div className="testimonial-card">
-            <img src={boy1} alt="Aditya" />
+            <img src={boy1} alt="R S Hariharann" />
             <p>
-              “The AI-based guidance and mock interviews made my preparation
-              smoother. Highly recommend to freshers!”
+              "As a UI/UX designer, 
+              I found the platform very intuitive and beginner-friendly. 
+              Highly recommended for freshers!”
             </p>
-            <h4>Aditya R</h4>
-            <span>Frontend Developer</span>
+            <h4>R S Hariharann</h4>
+            <span>UI/UX Designer</span>
           </div>
           <div className="testimonial-card">
             <img src={girl2} alt="Sneha" />
