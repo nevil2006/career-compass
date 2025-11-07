@@ -28,7 +28,7 @@ const LoginPage = () => {
 
           <div className="login-row">
             <label><input type="checkbox" /> Remember me</label>
-            <Link to="#" className="forgot">Forgot password?</Link>
+            <Link to="/forgot-password" className="forgot">Forgot password?</Link>
           </div>
 
           <button type="submit" className="login-action">Login</button>

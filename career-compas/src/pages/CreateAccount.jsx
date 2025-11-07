@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
+
 
 const CreateAccount = () => {
   const [formData, setFormData] = useState({
@@ -202,10 +204,11 @@ const CreateAccount = () => {
 
             <button type="submit" className="login-submit-btn">Submit</button>
           </form>
+              <p className="signup-text">
+                Already have an account? <Link to="/login" className="signup-link">Login</Link>
+              </p>
 
-          <p className="signup-text">
-            Already have an account? <a href="/login" className="signup-link">Login</a>
-          </p>
+
         </div>
       </div>
     </div>

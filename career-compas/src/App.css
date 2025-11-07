@@ -588,3 +588,14 @@ footer {
 footer:hover {
   text-shadow: 0 0 8px #00ffff;
 }
+.forgot-link {
+  font-size: 14px;
+  color: #0077ff;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
