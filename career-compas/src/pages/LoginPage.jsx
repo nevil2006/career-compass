@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom"; // ✅ Added Link
+import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 
 const LoginPage = () => {
@@ -7,52 +7,38 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // 🧠 Later, you’ll connect this to backend authentication
-    navigate("/"); // redirect to homepage after login
+    navigate("/");
   };
 
   return (
-    <div className="login-bg">
-      <div className="login-wrapper">
-        <div className="login-card">
-          <h2 className="login-title">Login</h2>
+    <div className="login-page page-slide">
+      <div className="login-box">
+        <h2 className="login-title">Login</h2>
 
-          <form onSubmit={handleLogin} className="login-form">
-            <div className="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="Enter your email" required />
-            </div>
+        <form onSubmit={handleLogin}>
+          <div className="input-field">
+            <input type="email" required />
+            <label>Email</label>
+          </div>
 
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
+          <div className="input-field">
+            <input type="password" required />
+            <label>Password</label>
+          </div>
 
-            <div className="login-options">
-              <label className="remember-me">
-                <input type="checkbox" /> Remember me
-              </label>
-              <a href="#" className="forgot-password">
-                Forgot password?
-              </a>
-            </div>
+          <div className="login-row">
+            <label><input type="checkbox" /> Remember me</label>
+            <Link to="#" className="forgot">Forgot password?</Link>
+          </div>
 
-            <button type="submit" className="login-submit-btn">
-              Login
-            </button>
-          </form>
+          <button type="submit" className="login-action">Login</button>
 
           <p className="signup-text">
             Don’t have an account?{" "}
-            <Link to="/signup" className="signup-link">
-              Sign up
-            </Link>
+            <Link to="/signup" className="signup-link">Sign up</Link>
           </p>
-        </div>
+        </form>
+
       </div>
     </div>
   );
