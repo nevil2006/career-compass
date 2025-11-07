@@ -531,3 +531,40 @@ body {
   text-shadow: 0 0 10px #8fffeb;
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 14px;
+  top: 42px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.toggle-eye:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+/* ✅ Fix Gender Dropdown Text Visibility */
+.select-input,
+.select-input option {
+  color: #000 !important;              /* Text black */
+  background: #ffffff !important;      /* White dropdown box */
+}
+
+/* Make the select still match your UI rounded style */
+.select-input {
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+/* Also fix browser default dropdown items */
+.form-group select {
+  color: #000 !important;
+  background-color: #fff !important;
+}

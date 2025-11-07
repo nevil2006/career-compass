@@ -19,7 +19,11 @@ const CreateAccount = () => {
   const [otpVerified, setOtpVerified] = useState({ phone: false, email: false });
   const [showPassRules, setShowPassRules] = useState(false);
 
-  // Password Validation
+  // ✅ NEW: Show/Hide password toggles
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  // Password Validation Rules
   const passwordChecks = {
     length: formData.password.length >= 8,
     uppercase: /[A-Z]/.test(formData.password),
@@ -77,7 +81,6 @@ const CreateAccount = () => {
           <h2 className="login-title">Create Account</h2>
 
           <form className="login-form" onSubmit={handleSubmit}>
-            {/* Existing Inputs (same as before) */}
             <div className="form-group">
               <label>Name</label>
               <input type="text" name="name" placeholder="Enter your full name" value={formData.name} onChange={handleChange} required />
@@ -109,7 +112,6 @@ const CreateAccount = () => {
               </div>
             </div>
 
-            {/* Phone */}
             <div className="form-group">
               <label>Phone Number</label>
               <div className="flex-input">
@@ -124,7 +126,6 @@ const CreateAccount = () => {
               </div>
             </div>
 
-            {/* Email */}
             <div className="form-group">
               <label>Email</label>
               <div className="flex-input">
@@ -139,11 +140,11 @@ const CreateAccount = () => {
               </div>
             </div>
 
-            {/* Password */}
-            <div className="form-group">
+            {/* ✅ Password with Show/Hide Toggle */}
+            <div className="form-group password-wrapper">
               <label>Password</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Create password"
                 value={formData.password}
@@ -151,6 +152,10 @@ const CreateAccount = () => {
                 onFocus={() => setShowPassRules(true)}
                 required
               />
+
+              <span className="toggle-eye" onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? "👁️" : "👁️‍🗨️"}
+              </span>
 
               {showPassRules && (
                 <div className="password-rules">
@@ -162,17 +167,22 @@ const CreateAccount = () => {
               )}
             </div>
 
-            {/* Confirm Password */}
-            <div className="form-group">
+            {/* ✅ Confirm Password with Show/Hide Toggle */}
+            <div className="form-group password-wrapper">
               <label>Confirm Password</label>
               <input
-                type="password"
+                type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
                 placeholder="Re-enter password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
               />
+
+              <span className="toggle-eye" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                {showConfirmPassword ? "👁️" : "👁️‍🗨️"}
+              </span>
+
               {formData.confirmPassword && (
                 <p className={formData.password === formData.confirmPassword ? "valid" : "invalid"}>
                   {formData.password === formData.confirmPassword ? "✔ Passwords match" : "✖ Passwords do not match"}
@@ -180,7 +190,6 @@ const CreateAccount = () => {
               )}
             </div>
 
-            {/* Gender */}
             <div className="form-group">
               <label>Gender</label>
               <select name="gender" className="select-input" value={formData.gender} onChange={handleChange} required>
