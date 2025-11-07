@@ -1,4 +1,4 @@
-/* 🌌 Global Styles */
+/* 🌌 GLOBAL STYLES */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -9,7 +9,22 @@ body {
   overflow-x: hidden;
 }
 
-/* ✨ Animated Background */
+/* ✨ Page Transition Animation */
+.app-transition {
+  animation: fadeApp 1.2s ease-in-out;
+}
+@keyframes fadeApp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ Animated Background Gradient */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -22,7 +37,7 @@ body {
   }
 }
 
-/* 🌈 Section Container */
+/* 🌊 Hero Section Background */
 .vanta-bg {
   min-height: 100vh;
   position: relative;
@@ -79,7 +94,7 @@ body {
   transform: scale(1.03);
 }
 
-/* 🔘 Login / Signup Button */
+/* 🔘 Login / Logout Button */
 .login-btn {
   background: linear-gradient(90deg, #ff416c, #ff4b2b);
   color: #fff;
@@ -93,7 +108,6 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 0 20px rgba(255, 65, 108, 0.5);
 }
-
 .login-btn:hover {
   background: linear-gradient(90deg, #ff4b2b, #ff416c);
   transform: scale(1.06);
@@ -111,23 +125,22 @@ body {
   transition: all 0.6s ease-in-out;
 }
 
-/* 🌌 Flashcard Box (Enlarged & Premium Look) */
+/* 🧊 Flashcard Box */
 .slide {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1250px; /* ⬆️ slightly wider */
+  max-width: 1250px;
   width: 95%;
   background: rgba(0, 10, 40, 0.55);
   border: 1px solid rgba(0, 255, 255, 0.15);
-  border-radius: 25px; /* smoother corners */
-  padding: 60px 70px; /* ⬆️ increased padding */
+  border-radius: 25px;
+  padding: 60px 70px;
   box-shadow: 0 12px 60px rgba(0, 0, 255, 0.3);
   backdrop-filter: blur(18px);
-  gap: 80px; /* ⬆️ more breathing space */
+  gap: 80px;
   transition: all 0.6s ease;
 }
-
 .slide:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 14px 70px rgba(0, 180, 255, 0.4);
@@ -137,19 +150,17 @@ body {
 .slide-text {
   flex: 1;
 }
-
 .slide-text h1 {
-  font-size: 3rem; /* ⬆️ larger */
+  font-size: 3rem;
   margin-bottom: 18px;
   font-weight: 700;
   background: linear-gradient(90deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .slide-text p {
   color: #dfefff;
-  font-size: 1.2rem; /* ⬆️ slightly larger */
+  font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 35px;
   opacity: 0.95;
@@ -173,10 +184,10 @@ body {
   transform: scale(1.07);
 }
 
-/* 🖼️ Flashcard Image (Larger) */
+/* 🖼️ Flashcard Image */
 .slide-image img {
-  width: 500px; /* ⬆️ larger */
-  height: 370px; /* ⬆️ taller */
+  width: 500px;
+  height: 370px;
   object-fit: cover;
   border-radius: 24px;
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
@@ -327,5 +338,179 @@ body {
   .see-more-btn {
     padding: 10px 24px;
     font-size: 0.9rem;
+  }
+}
+
+/* ========================= */
+/* 🔐 LOGIN PAGE STYLING (Modern Purple Centered Card) */
+/* ========================= */
+
+.login-bg {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #2a0845, #6441a5);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 💻 Optional faint background image */
+.login-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center/cover;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* 📦 Centered Wrapper */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+}
+
+/* 🪟 Glassmorphic Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 50px;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: left;
+  animation: fadeIn 1s ease;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* 🧾 Form Styles */
+.login-form .form-group {
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #e6e6e6;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-form input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(160, 94, 255, 0.7);
+}
+
+/* ⚙️ Remember / Forgot Password Row */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+}
+
+.remember-me {
+  color: #dcdcdc;
+}
+
+.forgot-password {
+  color: #b88cff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.forgot-password:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 💜 Login Button */
+.login-submit-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #a16eff, #6a11cb);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(160, 94, 255, 0.6);
+  transition: 0.3s;
+}
+.login-submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(160, 94, 255, 1);
+}
+
+/* 💬 Sign Up Text */
+.signup-text {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 25px;
+  color: #e3e3e3;
+}
+.signup-link {
+  color: #b88cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.signup-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* 🌟 Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Login */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 30px 25px;
   }
 }
