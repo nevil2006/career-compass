@@ -13,6 +13,7 @@ body {
 .app-transition {
   animation: fadeApp 1.2s ease-in-out;
 }
+
 @keyframes fadeApp {
   from {
     opacity: 0;
@@ -89,6 +90,7 @@ body {
   gap: 6px;
   transition: all 0.3s ease;
 }
+
 .logo:hover {
   color: #ff4b2b;
   transform: scale(1.03);
@@ -108,6 +110,7 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 0 20px rgba(255, 65, 108, 0.5);
 }
+
 .login-btn:hover {
   background: linear-gradient(90deg, #ff4b2b, #ff416c);
   transform: scale(1.06);
@@ -141,6 +144,7 @@ body {
   gap: 80px;
   transition: all 0.6s ease;
 }
+
 .slide:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 14px 70px rgba(0, 180, 255, 0.4);
@@ -150,6 +154,7 @@ body {
 .slide-text {
   flex: 1;
 }
+
 .slide-text h1 {
   font-size: 3rem;
   margin-bottom: 18px;
@@ -158,6 +163,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .slide-text p {
   color: #dfefff;
   font-size: 1.2rem;
@@ -178,6 +184,7 @@ body {
   box-shadow: 0 0 18px rgba(56, 249, 215, 0.6);
   transition: all 0.3s ease;
 }
+
 .see-more-btn:hover {
   background: linear-gradient(90deg, #38f9d7, #43e97b);
   box-shadow: 0 0 30px rgba(56, 249, 215, 1);
@@ -193,6 +200,7 @@ body {
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
   transition: all 0.6s ease;
 }
+
 .slide-image img:hover {
   transform: scale(1.1);
   box-shadow: 0 0 45px rgba(0, 255, 255, 0.5);
@@ -202,6 +210,7 @@ body {
 .fade-in {
   animation: fadeIn 1.2s ease;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -212,8 +221,6 @@ body {
     transform: translateY(0);
   }
 }
-
-/* 👥 Testimonials Section */
 .testimonials-section {
   background: linear-gradient(135deg, #00264d, #003b8e, #004e92);
   background-size: 200% 200%;
@@ -221,6 +228,7 @@ body {
   text-align: center;
   padding: 100px 20px;
 }
+
 .testimonials-section h2 {
   font-size: 2.5rem;
   margin-bottom: 50px;
@@ -228,12 +236,16 @@ body {
   font-weight: 700;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
+
+/* Grid Layout for Testimonial Cards */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2.5rem;
   justify-items: center;
 }
+
+/* Each Testimonial Card */
 .testimonial-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -245,10 +257,13 @@ body {
   transition: all 0.4s ease-in-out;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
 .testimonial-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 30px rgba(0, 255, 255, 0.3);
 }
+
+/* Profile Avatar */
 .testimonial-card img {
   width: 90px;
   height: 90px;
@@ -257,265 +272,24 @@ body {
   margin-bottom: 15px;
   object-fit: cover;
 }
+
+/* Review Text */
 .testimonial-card p {
   font-style: italic;
   font-size: 0.95rem;
   color: #e0f7ff;
   margin-bottom: 15px;
 }
+
+/* Name */
 .testimonial-card h4 {
   font-size: 1.1rem;
   color: #00d4ff;
   margin-bottom: 5px;
 }
+
+/* Role/Position */
 .testimonial-card span {
   font-size: 0.9rem;
   color: #b0e0ff;
-}
-
-/* 🩵 Footer */
-.footer {
-  background: rgba(0, 0, 20, 0.9);
-  color: #fff;
-  text-align: center;
-  padding: 25px 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-}
-.footer p {
-  margin: 0;
-  color: #bde0fe;
-  transition: all 0.3s ease;
-}
-.footer p:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* ========================= */
-/* 🔐 LOGIN PAGE STYLING */
-/* ========================= */
-
-.login-bg {
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(135deg, #2a0845, #6441a5);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-}
-
-.login-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80")
-    no-repeat center center/cover;
-  opacity: 0.25;
-  z-index: 0;
-}
-
-.login-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  width: 100%;
-}
-
-.login-card {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 40px 50px;
-  width: 400px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  color: #fff;
-  text-align: left;
-  animation: fadeIn 1s ease;
-}
-
-.login-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-}
-
-/* 🌈 SIGNUP PAGE STYLING (UPDATED SECTION) */
-.signup-bg {
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-}
-
-.signup-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80")
-    no-repeat center center/cover;
-  opacity: 0.3;
-  z-index: 0;
-}
-
-.signup-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  width: 100%;
-  padding: 20px;
-}
-
-.signup-card {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(25px);
-  border-radius: 25px;
-  padding: 45px 55px;
-  width: 500px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
-  animation: floatUp 4s ease-in-out infinite alternate;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-12px);
-  }
-}
-
-.signup-title {
-  text-align: center;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  background: linear-gradient(90deg, #00ffff, #00c3ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.signup-form .form-group {
-  margin-bottom: 18px;
-}
-
-.signup-form label {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  color: #f0f0f0;
-}
-
-.signup-form input,
-.select-input {
-  width: 100%;
-  padding: 12px 14px;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
-  font-size: 1rem;
-  outline: none;
-  transition: 0.3s ease;
-}
-
-.signup-form input:focus,
-.select-input:focus {
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 12px #00c3ff;
-  transform: scale(1.02);
-}
-
-.flex-input {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.auth-btn,
-.signup-submit-btn {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  padding: 12px 16px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 180, 255, 0.6);
-}
-.auth-btn:hover,
-.signup-submit-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 1);
-}
-
-.verified-text {
-  color: #00ffcc;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.signup-text {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 25px;
-  color: #e3e3e3;
-}
-.signup-link {
-  color: #00c3ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-.signup-link:hover {
-  text-decoration: underline;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .signup-card {
-    width: 90%;
-    padding: 35px 25px;
-  }
-  .signup-title {
-    font-size: 1.8rem;
-  }
-  .auth-btn,
-  .signup-submit-btn {
-    padding: 10px 12px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .signup-card {
-    padding: 25px 20px;
-  }
-  .signup-title {
-    font-size: 1.5rem;
-  }
 }
