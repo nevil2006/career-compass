@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // ✅ Added Link
 import "../App.css";
 
 const LoginPage = () => {
@@ -7,7 +7,8 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate("/");
+    // 🧠 Later, you’ll connect this to backend authentication
+    navigate("/"); // redirect to homepage after login
   };
 
   return (
@@ -47,9 +48,9 @@ const LoginPage = () => {
 
           <p className="signup-text">
             Don’t have an account?{" "}
-            <a href="#" className="signup-link">
+            <Link to="/signup" className="signup-link">
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
