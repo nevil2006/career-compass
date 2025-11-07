@@ -568,3 +568,23 @@ body {
   color: #000 !important;
   background-color: #fff !important;
 }
+/* 🌍 Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+footer:hover {
+  text-shadow: 0 0 8px #00ffff;
+}
