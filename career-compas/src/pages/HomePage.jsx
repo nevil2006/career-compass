@@ -90,7 +90,7 @@ function HomePage() {
           <div className="logo">Career Compass</div>
           <button
             className="login-btn"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/signup")}
           >
             Login / Sign Up
           </button>

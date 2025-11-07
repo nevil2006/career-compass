@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
-import {
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
-  GithubAuthProvider
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate, Link } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -28,11 +22,10 @@ const socialBtn = {
 
 const iconStyle = { width: "22px", height: "22px" };
 
-export default function LoginPage() {
+export default function SignupPage() {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [error,setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   // Auto redirect if logged in
@@ -42,20 +35,12 @@ export default function LoginPage() {
     });
   }, []);
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    signInWithEmailAndPassword(auth,email,password)
+    createUserWithEmailAndPassword(auth,email,password)
       .then(()=> navigate("/"))
-      .catch(err => {
-        if (err.code === "auth/too-many-requests") {
-          setError("Too many attempts. Try again later.");
-        } else {
-          setError(err.message);
-        }
-        setLoading(false);
-      });
+      .catch(err => setError(err.message));
   };
 
   return (
@@ -76,10 +61,9 @@ export default function LoginPage() {
         boxShadow:"0 0 20px rgba(0,0,0,0.3)"
       }}>
 
-        <h2 style={{fontSize:"26px", marginBottom:"25px"}}>Welcome Back 👋</h2>
+        <h2 style={{fontSize:"26px", marginBottom:"25px"}}>Create Account ✨</h2>
 
-        <form onSubmit={handleLogin} style={{display:"flex", flexDirection:"column", gap:"12px"}}>
-          
+        <form onSubmit={handleSignup} style={{display:"flex", flexDirection:"column", gap:"12px"}}>
           <input
             type="email"
             placeholder="Email"
@@ -96,23 +80,20 @@ export default function LoginPage() {
 
           {error && <p style={{color:"red", fontSize:"14px"}}>{error}</p>}
 
-          <button
-            style={{
-              background:"#3a86ff",
-              padding:"12px",
-              border:"none",
-              borderRadius:"6px",
-              color:"white",
-              cursor:"pointer",
-              fontWeight:"600"
-            }}
-            disabled={loading}
-          >
-            {loading ? "⏳ Logging in..." : "Login"}
+          <button style={{
+            background:"#3a86ff",
+            padding:"12px",
+            border:"none",
+            borderRadius:"6px",
+            color:"white",
+            cursor:"pointer",
+            fontWeight:"600"
+          }}>
+            Sign Up
           </button>
         </form>
 
-        <div style={{ marginTop: "18px", color:"#8892b0" }}>or sign in with</div>
+        <div style={{ marginTop: "18px", color:"#8892b0" }}>or sign up with</div>
 
         <div style={{marginTop:"14px", display:"flex", flexDirection:"column", gap:"10px"}}>
           
@@ -132,9 +113,9 @@ export default function LoginPage() {
         </div>
 
         <p style={{marginTop:"20px", fontSize:"14px"}}>
-          New here? <Link to="/signup" style={{color:"#3a86ff"}}>Create account</Link>
+          Already have an account?{" "}
+          <Link to="/login" style={{color:"#3a86ff"}}>Login here</Link>
         </p>
-
       </div>
     </div>
   );
