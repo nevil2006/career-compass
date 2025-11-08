@@ -7,7 +7,7 @@ const ForgotPassword = () => {
 
   const handleReset = (e) => {
     e.preventDefault();
-    alert(`📩 Password reset link sent to: ${email}`);
+    alert(` Password reset link sent to: ${email}`);
   };
 
   return (

@@ -44,36 +44,36 @@ const CreateAccount = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleGithubAuth = () => alert("✅ GitHub authenticated successfully!");
-  const handleLinkedInAuth = () => alert("✅ LinkedIn authenticated successfully!");
+  const handleGithubAuth = () => alert(" GitHub authenticated successfully!");
+  const handleLinkedInAuth = () => alert(" LinkedIn authenticated successfully!");
   const sendOtp = (type) => {
     setOtpSent({ ...otpSent, [type]: true });
-    alert(`📩 OTP sent to your ${type}!`);
+    alert(` OTP sent to your ${type}!`);
   };
   const verifyOtp = (type) => {
     setOtpVerified({ ...otpVerified, [type]: true });
-    alert(`✅ ${type.toUpperCase()} verified successfully!`);
+    alert(` ${type.toUpperCase()} verified successfully!`);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!otpVerified.phone || !otpVerified.email) {
-      alert("⚠️ Please verify both phone and email before submitting.");
+      alert(" Please verify both phone and email before submitting.");
       return;
     }
 
     if (!isPasswordValid) {
-      alert("⚠️ Password does not meet the required conditions.");
+      alert(" Password does not meet the required conditions.");
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      alert("⚠️ Passwords do not match.");
+      alert(" Passwords do not match.");
       return;
     }
 
-    alert("🎉 Account created successfully!");
+    alert(" Account created successfully!");
   };
 
   return (
