@@ -750,3 +750,351 @@ button:hover {
     font-size: 0.9rem;
   }
 }
+/* 🌍 Global Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
+  background-attachment: fixed;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.app-transition {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 General Text Styles */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #ffffff;
+  margin: 0;
+}
+
+p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* ===== Career Recommendation Page ===== */
+.career-page {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* 🔹 Header (Hero Section) */
+.career-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero-sub {
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.score-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  min-width: 240px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-left {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.score-right {
+  text-align: right;
+}
+
+.big-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.small-muted {
+  font-size: 0.8rem;
+  color: #a5b4fc;
+}
+
+.tiny {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+/* ===== Layout ===== */
+.career-content {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ===== Role Cards ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.career-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease-in-out;
+}
+
+.career-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.fit-pill {
+  background: linear-gradient(90deg, #60a5fa, #7c3aed);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+.fit-number {
+  font-size: 0.95rem;
+}
+
+.fit-text {
+  font-size: 0.75rem;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #d1d5db;
+}
+
+/* 🧩 Skill Chips */
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.skill-chip {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  transition: background 0.3s;
+}
+
+.skill-chip:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ⚙️ Card Footer */
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-left {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.meta-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Summary Panel ===== */
+.ai-summary-panel {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  color: #e2e8f0;
+}
+
+.ai-summary-panel h4 {
+  margin-bottom: 0.5rem;
+}
+
+.summary-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.primary-btn {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+.ghost-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Sidebar ===== */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.market-card,
+.compare-panel {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1rem;
+  border-radius: 16px;
+  color: #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.market-meta {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+}
+
+.muted {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ===== Saved Roles ===== */
+.saved-role {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+}
+
+.fit-mini {
+  font-weight: 600;
+  color: #93c5fd;
+}
+
+/* ===== Buttons ===== */
+button {
+  transition: all 0.3s ease;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 980px) {
+  .career-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .career-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .score-card {
+    margin: 0 auto;
+  }
+
+  .career-card {
+    padding: 1rem;
+  }
+}
