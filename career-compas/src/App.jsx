@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import CreateAccount from "./pages/CreateAccount";
-import ForgotPassword from "./pages/ForgotPassword"; // ✅ Add this line
+import ForgotPassword from "./pages/ForgotPassword";
+import ProfileSetup from "./pages/ProfileSetup"; // ✅ Added
 import "./App.css";
 
 function App() {
@@ -20,8 +21,11 @@ function App() {
           {/* 📝 Create Account Page */}
           <Route path="/signup" element={<CreateAccount />} />
 
+          {/* 👤 Profile Setup Page */}
+          <Route path="/profilesetup" element={<ProfileSetup />} /> {/* ✅ Added */}
+
           {/* 🔄 Forgot Password Page */}
-          <Route path="/forgot-password" element={<ForgotPassword />} />  {/* ✅ Add this */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     </div>
