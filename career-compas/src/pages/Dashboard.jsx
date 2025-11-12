@@ -1,35 +1,59 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import "./Dashboard.css";
+import roadmapImage from "../assets/roadmap-illustration.png"; // ✅ Correct import
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
   return (
-    <div className="flex flex-col h-screen text-white bg-gradient-to-b from-blue-900 to-blue-600">
-      <nav className="flex justify-between items-center px-8 py-4 bg-blue-950">
-        <h1 className="text-2xl font-bold">Career Compass</h1>
-        <button className="px-5 py-2 rounded-lg bg-pink-500 hover:bg-pink-600 transition">
+    <div className="dashboard-page">
+      {/* 🔹 Navbar */}
+      <nav className="dashboard-navbar">
+        <h1 className="dashboard-logo">Career Compass</h1>
+        <button onClick={handleLogout} className="logout-btn">
           Logout
         </button>
       </nav>
 
-      <div className="flex flex-1 items-center justify-center">
-        <div className="bg-blue-800/70 rounded-3xl shadow-lg p-10 flex items-center space-x-10">
-          <div>
-            <h2 className="text-4xl font-bold mb-4 text-cyan-300">
-              Dynamic Roadmap
-            </h2>
-            <p className="text-lg text-gray-200 mb-6">
-              Follow a personalized, step-by-step learning journey to become job-ready in your dream tech field.
+      {/* 🔹 Main Content */}
+      <motion.div
+        className="dashboard-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="dashboard-card">
+          <div className="dashboard-text">
+            <h2 className="dashboard-title">Dynamic Roadmap</h2>
+            <p className="dashboard-subtitle">
+              Follow a personalized, step-by-step learning journey to become
+              job-ready in your dream tech field.
             </p>
-            <button className="bg-green-400 hover:bg-green-500 text-black font-semibold px-6 py-3 rounded-lg">
+            <button
+              className="dashboard-btn"
+              onClick={() => navigate("/careerrecommendation")}
+            >
               Get Started →
             </button>
           </div>
-          <img
-            src="/roadmap-illustration.png"
+
+          {/* ✅ Roadmap Illustration */}
+          <motion.img
+            src={roadmapImage}
             alt="Dynamic Roadmap"
-            className="w-80"
+            className="dashboard-img"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

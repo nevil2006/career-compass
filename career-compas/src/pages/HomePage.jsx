@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
+import "./HomePage.css";
 
 // 🧠 Feature Images
 import aiRoleFinder from "../assets/ai-role-finder.png";

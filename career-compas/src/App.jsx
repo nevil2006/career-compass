@@ -1,35 +1,43 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// 🌍 Global CSS (used everywhere)
+import "./App.css";   // Global gradients, transitions, scrollbars
+import "./index.css"; // Basic reset styles
+
+// 📄 Page Components
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import CreateAccount from "./pages/CreateAccount";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProfileSetup from "./pages/ProfileSetup";
-import CareerRecommendation from "./pages/CareerRecommendation"; // ✅ Add this line
-import "./App.css";
+import CareerRecommendation from "./pages/CareerRecommendation";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <div className="app-transition">
       <BrowserRouter>
         <Routes>
-          {/* 🌊 Landing Page */}
+          {/* 🏠 Landing / Home */}
           <Route path="/" element={<HomePage />} />
 
-          {/* 🔐 Login Page */}
+          {/* 🔐 Authentication */}
           <Route path="/login" element={<LoginPage />} />
-
-          {/* 📝 Create Account Page */}
           <Route path="/signup" element={<CreateAccount />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
-          {/* 👤 Profile Setup Page */}
+          {/* 🧠 Profile Setup (Multi-step form) */}
           <Route path="/profilesetup" element={<ProfileSetup />} />
 
-          {/* 🚀 Career Recommendation Page */}
-          <Route path="/careerrecommendation" element={<CareerRecommendation />} /> {/* ✅ This fixes it */}
+          {/* 🤖 AI Career Recommendation */}
+          <Route
+            path="/careerrecommendation"
+            element={<CareerRecommendation />}
+          />
 
-          {/* 🔄 Forgot Password Page */}
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          {/* 📊 Dashboard */}
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>
