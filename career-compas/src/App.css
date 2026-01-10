@@ -1,0 +1,76 @@
+/* 🌍 GLOBAL STYLES — applies to all pages */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #000428, #004e92);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ✨ Background animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ✨ Page Fade Transition (used by .app-transition) */
+.app-transition {
+  animation: fadeApp 1s ease-in-out;
+}
+
+@keyframes fadeApp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌈 Smooth Scrollbar Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6a11cb, #2575fc);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2575fc, #6a11cb);
+}
+
+/* ✨ Text defaults */
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  color: #fff;
+}
+p {
+  margin: 0;
+  color: #dbeafe;
+  line-height: 1.6;
+}
+/* 🌍 Keep background stable across transitions */
+.page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000428, #004e92);
+  overflow: hidden;
+}
